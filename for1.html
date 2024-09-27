@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darcy-Weisbach Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: skyblue;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        form label, form input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: skyblue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007acc;
+        }
+
+        #result {
+            font-size: 1.2em;
+            color: #007acc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Calculator</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Darcy-Weisbach Equation Calculator</h1>
+        <p>This calculator helps you calculate the head loss using the Darcy-Weisbach equation.</p>
+
+        <form id="darcyForm">
+            <label for="f">Friction factor (f):</label>
+            <input type="number" id="f" name="f" required step="any">
+
+            <label for="L">Length of pipe (L in meters):</label>
+            <input type="number" id="L" name="L" required step="any">
+
+            <label for="D">Diameter of pipe (D in meters):</label>
+            <input type="number" id="D" name="D" required step="any">
+
+            <label for="V">Flow velocity (V in meters/second):</label>
+            <input type="number" id="V" name="V" required step="any">
+
+            <label for="g">Gravitational acceleration (g in m/s²):</label>
+            <input type="number" id="g" name="g" value="9.81" required step="any">
+
+            <button type="button" onclick="calculateHeadLoss()">Calculate</button>
+        </form>
+
+        <p id="result"></p>
+    </main>
+
+    <script>
+        function calculateHeadLoss() {
+            // Get values from form
+            let f = parseFloat(document.getElementById('f').value);
+            let L = parseFloat(document.getElementById('L').value);
+            let D = parseFloat(document.getElementById('D').value);
+            let V = parseFloat(document.getElementById('V').value);
+            let g = parseFloat(document.getElementById('g').value);
+
+            // Darcy-Weisbach equation: hf = f * (L / D) * (V^2 / (2 * g))
+            let headLoss = f * (L / D) * (V * V) / (2 * g);
+
+            // Display result
+            document.getElementById('result').innerText = Head Loss (h_f): ${headLoss.toFixed(4)} meters;
+        }
+    </script>
+</body>
+</html>

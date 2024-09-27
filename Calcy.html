@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1 - Calculator</title>
+    <style>
+        /* Styling for navigation bar */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Navigation links */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        /* Styling for the logo */
+        .logo {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+        }
+
+        /* Button styling for links */
+        .button {
+            display: block;
+            width: 200px;
+            padding: 10px 20px;
+            background-color: red; /* Red background for buttons */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px auto;
+            font-size: 16px;
+            animation: blink 1s infinite; /* Adding blinking animation */
+        }
+
+        /* Adding blink animation */
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Styling for page layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: skyblue; /* Sky blue background */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar at the top -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    
+    <h1>Calculator</h1>
+
+    <!-- Buttons placed one by one vertically -->
+    <a href="for1.html" class="button">Darcy-Weisbach</a>
+    <a href="for2.html" class="button">Hazen-Williams</a>
+    <a href="for3.html" class="button">Modified Hazen-Williams</a>
+    <a href="for4.html" class="button">Manning's Formula</a>
+</body>
+</html>
